@@ -1,9 +1,0 @@
-function [nextQ,nextq,nextqe,nextdq,nextdQ,nextyf,nextqp]=off_phase(Q,ke,dt,Qy,q,qe,ee,ii)
-nextq=q(ii,:);
-nextdq=(q(ii,:)-q(ii-1,:))/dt;
-nextdQ=nextdq*ke;
-nextqe=nextq;
-nextqp=round(nextq-nextqe,8);
-nextQ=ke*nextdq*dt+Q;
-nextyf=norm(nextQ)-Qy;
-% nextyf(abs(nextyf)<ee)=0;
